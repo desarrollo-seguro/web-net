@@ -24,7 +24,7 @@ describe('Test de seguridad de WebGoat', () => {
     cy.wait(3000)
   })
 
-  xit('Bypass del login', () => {
+  it('Bypass del login', () => {
     cy.visit(
         '/start.mvc#lesson/AuthBypass.lesson/1'
     )
@@ -52,7 +52,7 @@ describe('Test de seguridad de WebGoat', () => {
     cy.get('.assignment-success').should('be.visible')
   })
 
-  xit('Recovery question', () => {
+  it('Recovery question', () => {
     cy.visit(
         '/start.mvc#lesson/PasswordReset.lesson/3'
     )
@@ -68,7 +68,7 @@ describe('Test de seguridad de WebGoat', () => {
   })
 
 
-  xit('Relying in obscurity', () => {
+  it('Relying in obscurity', () => {
     cy.visit(
         '/start.mvc#lesson/MissingFunctionAC.lesson/2'
     )
@@ -104,7 +104,7 @@ describe('Test de seguridad de WebGoat', () => {
 
   })
 
-  xit('Try It! Numeric SQL injection', () => {
+  it('Try It! Numeric SQL injection', () => {
     cy.visit(
       '/start.mvc#lesson/SqlInjection.lesson/9'
     )
@@ -124,7 +124,7 @@ describe('Test de seguridad de WebGoat', () => {
     cy.get('.assignment-success').should('be.visible')
   })
 
-  xit('Try It! Numeric SQL injection', () => {
+  it('Try It! Numeric SQL injection', () => {
     cy.visit(
       '/start.mvc#lesson/InsecureLogin.lesson/1'
     )
@@ -147,7 +147,7 @@ describe('Test de seguridad de WebGoat', () => {
     })
   })
 
-  xit('XXE', () => {
+  it('XXE', () => {
     cy.visit(
       '/start.mvc#lesson/XXE.lesson/3'
     )
@@ -169,7 +169,7 @@ describe('Test de seguridad de WebGoat', () => {
     cy.get('.assignment-success').should('be.visible')
   })
 
-  xit('Cross Site Scripting', () => {
+  it('Cross Site Scripting', () => {
     cy.visit(
       '/start.mvc#lesson/CrossSiteScripting.lesson/6'
     )
@@ -187,21 +187,21 @@ describe('Test de seguridad de WebGoat', () => {
     cy.get('.attack-feedback').should('contain.text', "Congratulations")
   })
 
-  xit('Insecure serialization', () => {
+  it('Insecure serialization', () => {
     cy.visit(
       '/start.mvc#lesson/InsecureDeserialization.lesson/4'
     )
 
     cy.wait(3000)
 
-    cy.get('[name="token"]').type('rO0ABXNyADFvcmcuZHVtbXkuaW5zZWN1cmUuZnJhbWV3b3JrLlZ1bG5lcmFibGVUYXNrSG9sZGVyAAAAAAAAAAICAANMABZyZXF1ZXN0ZWRFeGVjdXRpb25UaW1ldAAZTGphdmEvdGltZS9Mb2NhbERhdGVUaW1lO0wACnRhc2tBY3Rpb250ABJMamF2YS9sYW5nL1N0cmluZztMAAh0YXNrTmFtZXEAfgACeHBzcgANamF2YS50aW1lLlNlcpVdhLobIkiyDAAAeHB3DgUAAAflCwIROjcne5b4eHQAB3NsZWVwIDV0AAVkdW1teQ==')
+    cy.get('[name="token"]').type('rO0ABXNyADFvcmcuZHVtbXkuaW5zZWN1cmUuZnJhbWV3b3JrLlZ1bG5lcmFibGVUYXNrSG9sZGVyAAAAAAAAAAICAANMABZyZXF1ZXN0ZWRFeGVjdXRpb25UaW1ldAAZTGphdmEvdGltZS9Mb2NhbERhdGVUaW1lO0wACnRhc2tBY3Rpb250ABJMamF2YS9sYW5nL1N0cmluZztMAAh0YXNrTmFtZXEAfgACeHBzcgANamF2YS50aW1lLlNlcpVdhLobIkiyDAAAeHB3DgUAAAflCwQGEjY3LVnYeHQAB3NsZWVwIDV0AAVkdW1teQ==')
     cy.get('[type="submit"]').click()
 
     cy.wait(3000)
     cy.get('.attack-feedback').should('contain.text', "Congratulations")
   })
 
-  xit('Cross Site Request Forgery', () => {
+  it('Cross Site Request Forgery', () => {
     cy.visit(
       '/start.mvc#lesson/CSRF.lesson/2'
     )
@@ -233,7 +233,7 @@ describe('Test de seguridad de WebGoat', () => {
       })
   })  
 
-  xit('Decoding a JWT token', () => {
+  it('Decoding a JWT token', () => {
     cy.visit('/start.mvc#lesson/JWT.lesson/2')
 
     cy.wait(3000)
@@ -274,3 +274,4 @@ describe('Test de seguridad de WebGoat', () => {
     cy.get('#user-and-info-nav > .dropdown > .dropdown-menu > :nth-child(1) > a').click()
   })
 })
+
